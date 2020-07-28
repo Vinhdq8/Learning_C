@@ -1,0 +1,14 @@
+#include <iostream>
+
+using namespace std;
+
+// Main
+int main(){
+    enum intern{Nam, Cao = -3, Minh, Vinh = 3, Son, Sang = (Nam + 2)*3} person;
+    person = Minh;                                              //if this person is Minh
+    cout << "Number of this person in internship: " << person << endl;
+    person = Sang;
+    cout << "Number of this person in internship: " << person << endl;
+    return 0;
+}
+//Elements in enum type can be only declared and are meaned as interger type
