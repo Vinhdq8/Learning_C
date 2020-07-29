@@ -1,0 +1,53 @@
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+// global var
+float temp[3];
+
+float* caculation(float a1,float a2,float a3);
+
+// Main
+int main(){
+    float* c;
+    c = caculation(1,2,5);
+    if (c[0] == -1)
+        cout << "Phuong trinh vo so nghiem" << endl;
+    else
+        cout << "So nghiem cua phuong trinh:" << c[0] <<endl;
+    if (c[0] == 1)
+        cout << "Nghiem cua phuong trinh: x = " << c[1] <<endl;
+    else if (c[0] == 2)
+        cout << "Nghiem cua phuong trinh: x1 = " << c[1] << "  x2 = " << c[2] <<endl;
+    return 0;
+}
+
+float* caculation(float a1, float a2, float a3){
+    float x1,x2,x;                          //x1,x2 is the solution while x is the number of solution
+    if (a1 == 0){
+        if (a2 == 0)
+            if (a3 == 0)
+                x = -1;                     //x = -1 means infinite solution
+            else
+                x = 0;
+        else{
+            x = 1;
+            x1 = -a3/a2;
+            x2 = 0;
+        }
+    }
+    else {
+        float delta = a2*a2 - 4*a1*a3;
+        if (delta < 0)
+            x = 0;
+        else{
+            x = 2;
+            x1 = (-a2+sqrt(delta))/(2*a1);
+            x2 = (-a2-sqrt(delta))/(2*a1);
+        }
+    }
+    temp[0] = x;
+    temp[1] = x1;
+    temp[2] = x2;
+    return temp;
+}
