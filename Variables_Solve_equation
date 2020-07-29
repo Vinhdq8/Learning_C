@@ -2,7 +2,7 @@
 
 using namespace std;
 
- extern float* caculation(float a1,float a2,float a3);
+ extern float* caculation(float,float,float);
 
 // Main
 int main(){
