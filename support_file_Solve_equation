@@ -1,0 +1,30 @@
+#include "iostream"
+#include <math.h>
+
+float* caculation(float a1, float a2, float a3){
+    float x1,x2,x;                          //x1,x2 is the solution while x is the number of solution
+    if (a1 == 0){
+        if (a2 == 0)
+            if (a3 == 0)
+                x = -1;                     //x = -1 means infinite solution
+            else
+                x = 0;
+        else{
+            x = 1;
+            x1 = -a3/a2;
+            x2 = 0;
+        }
+    }
+    else {
+        float delta = a2*a2 - 4*a1*a3;
+        if (delta < 0)
+            x = 0;
+        else{
+            x = 2;
+            x1 = (-a2+sqrt(delta))/(2*a1);
+            x2 = (-a2-sqrt(delta))/(2*a1);
+        }
+    }
+    static float temp[3] = {x,x1,x2};
+    return temp;
+}
