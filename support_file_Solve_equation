@@ -1,7 +1,7 @@
 #include "iostream"
 #include <math.h>
 
-float* caculation(float a1, float a2, float a3){
+float* caculation(float a1 = 0, float a2 = 0, float a3 = 0){
     float x1,x2,x;                          //x1,x2 is the solution while x is the number of solution
     if (a1 == 0){
         if (a2 == 0)
